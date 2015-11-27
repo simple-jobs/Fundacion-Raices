@@ -2325,7 +2325,7 @@ span.menu {
     font-weight:bold;
     letter-spacing:0.6px;
     line-height:48px;
-    color: #30437E;
+    color: #444444;
     -webkit-transition: 0.25s;
   -moz-transition: 0.25s;
   -o-transition: 0.25s;
@@ -2355,7 +2355,7 @@ span.menu {
 }
 
 #navigationMenu .twitter span{
-    background-color:#9FCCE0;;
+    background-color:#9FCCE0;
 }
 
 #navigationMenu .facebook { 

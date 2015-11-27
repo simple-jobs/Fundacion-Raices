@@ -102,15 +102,50 @@
   
     <!--/****** Footer *********/-->
     {% block footer %}
-     <div class="footer">
+     <div class="footer" style="padding: 4em;">
         <div class="container">
-          
-          <div class="copy-rights">
-            <p>&copy; 2015 Stunning. All Rights Reserved | Design by <a href="http://w3layouts.com/">W3layouts</a> </p>
+        <div class="row">
+          <div class="col-md-4">
+                  <h4 style="margin-bottom:10px;"><a href="/" style="color:white !important;text-decoration:none;">Inicio</a></h4>
+                  <h4 style="margin-bottom:10px;"><a href="/quienes-somos/" style="color:white !important;text-decoration:none;">Quienes somos</a></h4>
+                  <h4 style="margin-bottom:10px;"><a href="/quienes-somos/" style="color:white !important;text-decoration:none;">Misión</a></h4>
+                  <h4 style="margin-bottom:10px;"><a href="/quienes-somos/"  style="color:white !important;text-decoration:none;">Visión</a></h4>
           </div>
+           <div class="col-md-4">
+           <h2 style="color:white">Fundación Raices para el Desarrolo</h2>
+          
+          
+                  <br>
+                  <p style="color:white">Telephone: 4 20 12 07
+                  <br>
+                    E-mail: <a href="raicesparaeldesarrollo@gmail.com">raicesparaeldesarrollo@gmail.com</a>
+                  </p>
+          </div>   
+
+          <div class="col-md-4">
+                  <ul id="navigationMenu" >
+                      <li>
+                          <a class="twitter" href="https://twitter.com/fund_raices">
+                              <span>Twitter</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a class="facebook" href="https://www.facebook.com/Ra%C3%ADces-para-el-Desarrollo-Fundaci%C3%B3n-1644960755770526/">
+                              <span>Facebook</span>
+                          </a>
+                      </li>
+                  </ul>
+          </div>
+          
+          
+          
+
+            
         </div>
-    <!---->
-      </div>
+
+            </div>
+    </div>
+  </div>
     {% endblock %}
     <!--/****** end Footer *********/-->
     <script src="{% static "js/jquery.min.js" %}"> </script>
