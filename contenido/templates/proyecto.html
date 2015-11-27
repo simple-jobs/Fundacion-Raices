@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="header-banner">
+					<!-- Top Navigation -->
+					<section class="bgi banner5"><h2>Proyectos</h2> </section>
+					   
+<!--about-starts--> 
+	<div class="about">
+		
+		<div class="container">
+			{% for proyecto in proyectos %}
+			<div class="row">
+				<div class="col-md-4">
+					<h2 style="margin-bottom:20px;">{{proyecto.nombre}}</h2>
+					{{proyecto.archivo}}
+					<!-- <iframe width="300" height="315" src="https://www.youtube.com/embed/ovPBtAXTJko" frameborder="0" allowfullscreen></iframe> -->
+					
+				</div>
+				<div class="col-md-8" style="margin-top: 45px;">
+					<p style="font-size: 20px;color: #999;">{% autoescape off %}{{proyecto.descripcion}}{% endautoescape %}</p>	
+				</div>
+			</div>
+			<hr>
+			{% endfor %}
+		
+		</div>
+
+		
+			
+			
+		
+	</div>
+
+</div>
+{% endblock %}
+
+
+

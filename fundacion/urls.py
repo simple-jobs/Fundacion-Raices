@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     
     url(r'', include('contenido.urls', namespace="website")),
+    url(r'^summernote/', include('django_summernote.urls')),
    
 ]
 

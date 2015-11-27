@@ -38,6 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'contenido',
+    'django_forms_bootstrap',
+    'django_summernote',
 
 )
 
@@ -100,6 +102,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
+
+
+from .email_info import *
+
+EMAIL_USE_TLS = EMAIL_USE_TLS 
+EMAIL_HOST = EMAIL_HOST
+EMAIL_PORT = EMAIL_PORT
+EMAIL_HOST_USER = EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
 
 if DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, 'files/static-collected/')

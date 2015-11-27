@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+
+<div class="header-banner">
+					<!-- Top Navigation -->
+	<section class="bgi banner5"><h2>Quienes somos?</h2> </section>
+					   
+<!--about-starts--> 
+	<div class="about">
+		<div class="container" style="margin-bottom: 40px;">
+			<div class="about-top heading">
+				<p style="font-size:20px; ">{% autoescape off %}{{quienes_somos.quienes_somos}}{% endautoescape %}</p>
+				
+			</div>
+		</div>
+
+		<div class="container" style="width:100%;">
+			<div class="row" style="padding-top: 30px;padding-bottom: 30px;" >
+				<div class="col-md-8">
+					<h2 style="font-size: 40px; font-weight: 900; color: #48A6DA;" >Misión</h2>
+					<p style="font-size:20px; color: #999;">
+						{% autoescape off %}{{quienes_somos.mision}}{% endautoescape %}
+					</p>
+				</div>
+				<div class="col-md-4">
+					<img src="images/vision.jpg" alt="mision" style="width:300px; height:400px; ">
+				</div>
+			</div>
+				
+		</div>
+			<div class="container"   style="width:100%;">
+				<div class="row" style="padding-top: 30px;padding-bottom: 30px;" >
+					<div class="col-md-4">
+						<img src="images/vision.jpg" alt="vision" style="width:300px; height:400px; margin-left: 40px;">
+					</div>
+					<div class="col-md-8">
+						<h2 style="font-size: 40px; font-weight: 900; color: #48A6DA;">Visión</h2>
+						<p style="font-size:20px; color: #999;">
+							{% autoescape off %}{{quienes_somos.vision}}{% endautoescape %}
+						</p>
+					</div>
+				</div>	
+			</div>
+			
+		
+	</div>
+
+</div>
+
+
+
+
+{% endblock %}

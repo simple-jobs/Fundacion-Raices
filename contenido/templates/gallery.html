@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+			
+<div class="header-banner">
+					<!-- Top Navigation -->
+		<section class="bgi banner5"><h2>Gallery</h2> </section>
+							<!--gallery-->
+	<div class="gallery" id="gallery">
+		<div class="container">
+					
+			<div class="gallery-grids">
+				<section>
+					<ul id="da-thumbs" class="da-thumbs">
+						<li>
+							<a href="{% static "images/pp1-1.jpg" %}" class="b-link-stripe b-animate-go  thickbox">
+								<img src="{% static "images/pp1-1.jpg"%}" alt="" />
+								<div>
+									<h5>Traveling</h5>
+									<span>non suscipit leo fringilla non suscipit leo fringilla molestie</span>
+								</div>
+							</a>
+						</li>
+						
+					</ul>
+				</section>
+	        </div>
+<!--script-->
+		</div>
+	</div>
+<!--//gallery-->
+</div>
+
+{% endblock %}
+
+{% block extrajs  %}
+<script src="{% static "js/jquery.min.js" %}"> </script>
+	<script type="text/javascript" src="{% static "js/jquery.hoverdir.js" %}"></script>	
+		<script type="text/javascript">
+			$(function() {
+			
+				$(' #da-thumbs > li ').each( function() { $(this).hoverdir(); } );
+
+			});
+		</script>
+<script src="{% static "js/modernizr.custom.97074.js" %}"></script>    
+ {% endblock %}
+
+

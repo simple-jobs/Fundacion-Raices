@@ -6,15 +6,7 @@ class Inicio(models.Model):
 	def __unicode__(self):
 		return 'Informacion de presentacion'
 
-class Investigacione(models.Model):
-	presentacion = models.TextField(max_length=700,verbose_name="Introducion a la lineas de investigacion",)
-	paz = models.TextField(max_length=700,verbose_name="Paz, Seguridad y Postconflicto",)
-	comunidades = models.TextField(max_length=700,verbose_name="Comunidades y Medio Ambiente Sostenible",)
-	fortalecimiento = models.TextField(max_length=700,verbose_name="Fortalecimiento Institucional",)
-	modernizacion = models.TextField(max_length=700,verbose_name="Modernizacion de Gobiernos Locales",)
 
-	def __unicode__(self):
-		return 'Lineas de Investigacion'
 
 class QuienesSomo(models.Model):
 	quienes_somos = models.TextField(max_length=700,verbose_name="Quienes Somos",)
@@ -37,12 +29,11 @@ class Contacto(models.Model):
 		return 'Datos de Contacto'
 
 class Proyecto(models.Model):
-	nombre = models.CharField(max_length=255,verbose_name="Nombre del Proyecto",)
-	descripcion = models.TextField(max_length=700,verbose_name="Descripcion del proyecto",)
-	archivo = models.FileField(upload_to='proyectos/', blank=True, null=True,)
+	nombre = models.CharField(max_length=255,verbose_name="Nombre del proyecto",)
+	descripcion = models.TextField(max_length=25000,verbose_name="Descripcion del proyecto",)
 
 	def __unicode__(self):
-		return 'Proyectos'
+		return self.nombre
 
 class Documento(models.Model):
 	nombre = models.CharField(max_length=255,verbose_name="Nombre del Documento",)
@@ -50,6 +41,7 @@ class Documento(models.Model):
 
 	def __unicode__(self):
 		return 'Centro de Documentacion'
+
 
 class Imagene(models.Model):
 	nombre = models.CharField(max_length=255,verbose_name="Titulo de la imagen",)
@@ -59,4 +51,19 @@ class Imagene(models.Model):
 
 	def __unicode__(self):
 		return self.nombre
+
+
+
+class Paz(models.Model):
+	descripcion = models.TextField(max_length=1000,verbose_name="Paz, Seguridad y Postconflicto",)
+
+class Comunidade(models.Model):
+	descripcion = models.TextField(max_length=1000,verbose_name="Comunidades y Medio Ambiente Sostenible",)
+
+class Fortalecimiento(models.Model):
+	descripcion = models.TextField(max_length=1000,verbose_name="Fortalecimiento Institucional",)
+
+class Modernizacion(models.Model):
+	descripcion = models.TextField(max_length=1000,verbose_name="Modernizacion de Gobiernos Locales",)
+
 

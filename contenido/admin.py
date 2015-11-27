@@ -1,6 +1,8 @@
 from django.contrib import admin
-from .models import Inicio,QuienesSomo,Investigacione,Contacto,Proyecto,Documento,Imagene
+from .models import Inicio,QuienesSomo,Contacto,Proyecto,Documento, Paz, Comunidade,Fortalecimiento,Modernizacion,Imagene
 from django.contrib.auth.models import Group
+from django_summernote.admin import SummernoteModelAdmin
+from django_summernote.models import Attachment
 
 class InicioAdmin(admin.ModelAdmin):
 	list_display = ('presentacion',)
@@ -8,13 +10,21 @@ class InicioAdmin(admin.ModelAdmin):
 class QuienesSomoAdmin(admin.ModelAdmin):
 	list_display = ('quienes_somos','mision','vision','objetivos',)
 
-class InvestigacioneAdmin(admin.ModelAdmin):
-	list_display=('presentacion','paz','comunidades','fortalecimiento','modernizacion',)
+class PazAdmin(admin.ModelAdmin):
+	list_display = ('descripcion',)
 
-class ProyectoAdmin(admin.ModelAdmin):
-	list_display=('nombre','descripcion','archivo',)
-	list_filter = ('nombre','descripcion','archivo',)
-	search_fields = ('nombre', 'descripcion',)
+class ComunidadesAdmin(admin.ModelAdmin):
+	list_display = ('descripcion',)
+
+class FortalecimientoAdmin(admin.ModelAdmin):
+	list_display = ('descripcion',)
+
+class ModernizacionAdmin(admin.ModelAdmin):
+	list_display = ('descripcion',)
+
+class ProyectoAdmin(SummernoteModelAdmin):
+	list_display=('descripcion',)
+	
 
 class DocumentoAdmin(admin.ModelAdmin):
 	list_display=('nombre','archivo',)
@@ -25,12 +35,15 @@ class ImageneAdmin(admin.ModelAdmin):
 	list_display = ('imagen','nombre','descripcion',)
 	
 
-
+admin.site.unregister(Attachment)
 admin.site.unregister(Group)
 admin.site.register(Imagene,ImageneAdmin)
 admin.site.register(Inicio,InicioAdmin)
 admin.site.register(QuienesSomo,QuienesSomoAdmin)
-admin.site.register(Investigacione,InvestigacioneAdmin)
+admin.site.register(Paz, PazAdmin)
+admin.site.register(Comunidade, ComunidadesAdmin)
+admin.site.register(Fortalecimiento, FortalecimientoAdmin)
+admin.site.register(Modernizacion, FortalecimientoAdmin)
 admin.site.register(Contacto)
 admin.site.register(Proyecto,ProyectoAdmin)
 admin.site.register(Documento,DocumentoAdmin)

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load bootstrap_tags %}
+{% block extracss  %}
+<style>
+	#map {background-color: #000; height: 100%; width: 100%;}
+</style>
+ {% endblock %}
+{% block content %}
+
+			<div class="header-banner">
+					<!-- Top Navigation -->
+					<section class="bgi banner5"><h2>Contact</h2> </section>
+					
+	<!-- contact -->
+	<div class="contact-top">
+		<!-- container -->
+		<div class="container">
+			<div id="map">
+				
+			</div>
+			<div class="mail-grids">
+				<div class="col-md-6 ">
+					<h2>Fundación Raices para el Desarrolo</h2>
+					
+					
+					<br>
+					<p>Telephone: 4 20 12 07
+					<br>
+						E-mail: <a href="raicesparaeldesarrollo@gmail.com">raicesparaeldesarrollo@gmail.com</a>
+					</p>
+				</div>
+				<div class="col-md-6 contact-form">
+					<form method="post">
+					
+						{% csrf_token %}
+    					{{ form|as_bootstrap }}
+						<input type="submit" value="SEND">
+					</form>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<!-- //container -->
+	</div>
+	<!-- //contact -->
+		</div>
+</div>
+
+{% endblock %}
+<!----> 
+{% block extrajs %}
+ 
+<script>
+	
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 8
+  });
+  google.maps.event.trigger(map, "resize");
+}
+</script>
+
+<script async defer
+      src="https://maps.googleapis.com/maps/api/js?&size=324x200&key=AIzaSyDI5G6-6ztcmc2iPdZGDK1qNwL710T3BJA&callback=initMap">
+ </script>
+
+{% endblock %}
+
