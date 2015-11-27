@@ -11,23 +11,25 @@
 <!--about-starts--> 
 	<div class="about">
 		
-		<div class="container">
-			{% for proyecto in proyectos %}
-			<div class="row">
-				<div class="col-md-4">
-					<h2 style="margin-bottom:20px;">{{proyecto.nombre}}</h2>
-					{{proyecto.archivo}}
-					<!-- <iframe width="300" height="315" src="https://www.youtube.com/embed/ovPBtAXTJko" frameborder="0" allowfullscreen></iframe> -->
+		 <div>
+		     <!-- <h1 style="font-size: 60px;margin-bottom: 10px;">Documentos</h1> -->
+		     <div class="bs-example">
+				 <table class="table">
+				  <tbody>
+				  {% for proyecto in proyectos %}
+					<tr>
+					  <td><h1 id="h1.-bootstrap-heading"><a class="anchorjs-link" href="/proyectos/{{ proyecto.id}}">{{proyecto.nombre}}<span class="anchorjs-icon"></span></a></h1></td>
+					  <!-- <td class="type-info"><a href="{{documento.archivo.url}}">Archivo.docx</a></td> -->
+					</tr>
+					{% endfor %}
 					
-				</div>
-				<div class="col-md-8" style="margin-top: 45px;">
-					<p style="font-size: 20px;color: #999;">{% autoescape off %}{{proyecto.descripcion}}{% endautoescape %}</p>	
-				</div>
-			</div>
-			<hr>
-			{% endfor %}
+					
+				  </tbody>
+				 </table>
+			 </div>
+	      </div>
+
 		
-		</div>
 
 		
 			

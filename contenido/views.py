@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, TemplateView, View
-from .models import Inicio, QuienesSomo, Contacto, Proyecto, Documento, Paz, Comunidade, Fortalecimiento, Modernizacion
+from .models import Inicio, QuienesSomo, Contacto, Proyecto, Documento, Paz, Comunidade, Fortalecimiento, Modernizacion,Imagene
 from django.core.mail import send_mail, BadHeaderError
 from .forms import ContactForm
 from django.contrib import messages
@@ -57,8 +57,19 @@ class ProjectView(TemplateView):
 		context['proyectos'] =  Proyecto.objects.all()
 		return context
 
+
+def DetailProject(request, id):
+	detalleProject = Proyecto.objects.filter(pk=id)
+	return render(request, "detailProject.html", {'detalleProject': detalleProject})
+
+
 class GalleryView(TemplateView):
 	template_name = 'gallery.html'
+
+	def get_context_data(self, **kwargs):
+		context = super(GalleryView, self).get_context_data(**kwargs)
+		context['imagenes'] =  Imagene.objects.all()
+		return context
 
 class CenterView(TemplateView):
 	template_name = 'centroDocumentacion.html'
@@ -82,7 +93,7 @@ def email(request):
             print message
             try:
             	print "entro"
-                send_mail(subject, message, from_email,['abachadi@gmail.com'])
+                send_mail(subject, message, from_email,[settings.EMAIL_HOST_USER])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             

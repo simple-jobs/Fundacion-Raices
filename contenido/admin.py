@@ -32,7 +32,17 @@ class DocumentoAdmin(admin.ModelAdmin):
 	search_fields = ('nombre',)
 
 class ImageneAdmin(admin.ModelAdmin):
-	list_display = ('imagen','nombre','descripcion',)
+	list_display = ('imagens','nombre','descripcion',)
+	search_fields = ('nombre',)
+
+	def imagens(self, obj):
+		if obj.imagen:
+			return '<img src="%s" width="200px" height="100px">' % (obj.imagen.url)
+		else:
+			return '<img src="%s" width="200px" height="100px">' % ('http://placehold.it/200x100')
+	imagens.allow_tags = True
+	imagens.admin_order_field = 'imagen'
+	imagens.short_description = 'Imagen'
 	
 
 admin.site.unregister(Attachment)

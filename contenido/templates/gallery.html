@@ -6,20 +6,20 @@
 			
 <div class="header-banner">
 					<!-- Top Navigation -->
-		<section class="bgi banner5"><h2>Gallery</h2> </section>
+		<section class="bgi banner5"><h2>Galeria de Imagenes</h2> </section>
 							<!--gallery-->
 	<div class="gallery" id="gallery">
 		<div class="container">
-					
+			 {% for imagen in imagenes %}		
 			<div class="gallery-grids">
 				<section>
 					<ul id="da-thumbs" class="da-thumbs">
 						<li>
-							<a href="{% static "images/pp1-1.jpg" %}" class="b-link-stripe b-animate-go  thickbox">
-								<img src="{% static "images/pp1-1.jpg"%}" alt="" />
+							<a href="{{ imagen.imagen.url }}" target="_blank" class="b-link-stripe b-animate-go  thickbox">
+								<img src="{{ imagen.imagen.url }}" alt="" style="height: 400px;"/>
 								<div>
-									<h5>Traveling</h5>
-									<span>non suscipit leo fringilla non suscipit leo fringilla molestie</span>
+									<h5>{{imagen.nombre}}</h5>
+									<span>{{imagen.descripcion}}</span>
 								</div>
 							</a>
 						</li>
@@ -27,6 +27,7 @@
 					</ul>
 				</section>
 	        </div>
+	        {% endfor %}
 <!--script-->
 		</div>
 	</div>

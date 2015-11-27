@@ -45,7 +45,7 @@ class Documento(models.Model):
 
 class Imagene(models.Model):
 	nombre = models.CharField(max_length=255,verbose_name="Titulo de la imagen",)
-	descripcion = models.CharField(max_length=255,verbose_name="Descripcion de la imagen",)
+	descripcion =  models.TextField(max_length=1000,verbose_name="Descripcion de la imagen",)
 	imagen = models.ImageField(upload_to="imagenes/",verbose_name="Imagen para galeria" , blank=True, null=True)
 
 
