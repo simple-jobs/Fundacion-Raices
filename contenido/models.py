@@ -6,15 +6,7 @@ class Inicio(models.Model):
 	def __unicode__(self):
 		return 'Informacion de presentacion'
 
-class Investigacione(models.Model):
-	presentacion = models.TextField(max_length=700,verbose_name="Introducion a la lineas de investigacion",)
-	paz = models.TextField(max_length=700,verbose_name="Paz, Seguridad y Postconflicto",)
-	comunidades = models.TextField(max_length=700,verbose_name="Comunidades y Medio Ambiente Sostenible",)
-	fortalecimiento = models.TextField(max_length=700,verbose_name="Fortalecimiento Institucional",)
-	modernizacion = models.TextField(max_length=700,verbose_name="Modernizacion de Gobiernos Locales",)
 
-	def __unicode__(self):
-		return 'Lineas de Investigacion'
 
 class QuienesSomo(models.Model):
 	quienes_somos = models.TextField(max_length=700,verbose_name="Quienes Somos",)
@@ -51,3 +43,12 @@ class Documento(models.Model):
 	def __unicode__(self):
 		return 'Centro de Documentacion'
 
+
+class Paz(models.Model):
+	descripcion = models.TextField(max_length=1000,verbose_name="Paz, Seguridad y Postconflicto",)
+class Comunidade(models.Model):
+	descripcion = models.TextField(max_length=1000,verbose_name="Comunidades y Medio Ambiente Sostenible",)
+class Fortalecimiento(models.Model):
+	descripcion = models.TextField(max_length=1000,verbose_name="Fortalecimiento Institucional",)
+class Modernizacion(models.Model):
+	descripcion = models.TextField(max_length=1000,verbose_name="Modernizacion de Gobiernos Locales",)

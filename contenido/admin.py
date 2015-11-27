@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Inicio,QuienesSomo,Investigacione,Contacto,Proyecto,Documento
+from .models import Inicio,QuienesSomo,Contacto,Proyecto,Documento, Paz, Comunidade,Fortalecimiento,Modernizacion
 from django.contrib.auth.models import Group
 
 class InicioAdmin(admin.ModelAdmin):
@@ -8,8 +8,17 @@ class InicioAdmin(admin.ModelAdmin):
 class QuienesSomoAdmin(admin.ModelAdmin):
 	list_display = ('quienes_somos','mision','vision','objetivos',)
 
-class InvestigacioneAdmin(admin.ModelAdmin):
-	list_display=('presentacion','paz','comunidades','fortalecimiento','modernizacion',)
+class PazAdmin(admin.ModelAdmin):
+	list_display = ('descripcion',)
+
+class ComunidadesAdmin(admin.ModelAdmin):
+	list_display = ('descripcion',)
+
+class FortalecimientoAdmin(admin.ModelAdmin):
+	list_display = ('descripcion',)
+
+class ModernizacionAdmin(admin.ModelAdmin):
+	list_display = ('descripcion',)
 
 class ProyectoAdmin(admin.ModelAdmin):
 	list_display=('nombre','descripcion','archivo',)
@@ -26,7 +35,10 @@ class DocumentoAdmin(admin.ModelAdmin):
 admin.site.unregister(Group)
 admin.site.register(Inicio,InicioAdmin)
 admin.site.register(QuienesSomo,QuienesSomoAdmin)
-admin.site.register(Investigacione,InvestigacioneAdmin)
+admin.site.register(Paz, PazAdmin)
+admin.site.register(Comunidade, ComunidadesAdmin)
+admin.site.register(Fortalecimiento, FortalecimientoAdmin)
+admin.site.register(Modernizacion, FortalecimientoAdmin)
 admin.site.register(Contacto)
 admin.site.register(Proyecto,ProyectoAdmin)
 admin.site.register(Documento,DocumentoAdmin)
