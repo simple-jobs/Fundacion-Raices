@@ -51,3 +51,12 @@ class Documento(models.Model):
 	def __unicode__(self):
 		return 'Centro de Documentacion'
 
+class Imagene(models.Model):
+	nombre = models.CharField(max_length=255,verbose_name="Titulo de la imagen",)
+	descripcion = models.CharField(max_length=255,verbose_name="Descripcion de la imagen",)
+	imagen = models.ImageField(upload_to="imagenes/",verbose_name="Imagen para galeria" , blank=True, null=True)
+
+
+	def __unicode__(self):
+		return self.nombre
+

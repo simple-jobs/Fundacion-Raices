@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Inicio,QuienesSomo,Investigacione,Contacto,Proyecto,Documento
+from .models import Inicio,QuienesSomo,Investigacione,Contacto,Proyecto,Documento,Imagene
 from django.contrib.auth.models import Group
 
 class InicioAdmin(admin.ModelAdmin):
@@ -20,10 +20,14 @@ class DocumentoAdmin(admin.ModelAdmin):
 	list_display=('nombre','archivo',)
 	list_filter = ('nombre','archivo',)
 	search_fields = ('nombre',)
+
+class ImageneAdmin(admin.ModelAdmin):
+	list_display = ('imagen','nombre','descripcion',)
 	
 
 
 admin.site.unregister(Group)
+admin.site.register(Imagene,ImageneAdmin)
 admin.site.register(Inicio,InicioAdmin)
 admin.site.register(QuienesSomo,QuienesSomoAdmin)
 admin.site.register(Investigacione,InvestigacioneAdmin)
