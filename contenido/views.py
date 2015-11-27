@@ -57,6 +57,12 @@ class ProjectView(TemplateView):
 		context['proyectos'] =  Proyecto.objects.all()
 		return context
 
+
+def DetailProject(request, id):
+	detalleProject = Proyecto.objects.filter(pk=id)
+	return render(request, "detailProject.html", {'detalleProject': detalleProject})
+
+
 class GalleryView(TemplateView):
 	template_name = 'gallery.html'
 
@@ -82,7 +88,7 @@ def email(request):
             print message
             try:
             	print "entro"
-                send_mail(subject, message, from_email,['abachadi@gmail.com'])
+                send_mail(subject, message, from_email,[settings.EMAIL_HOST_USER])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             
