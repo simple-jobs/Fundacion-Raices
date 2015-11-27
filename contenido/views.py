@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, TemplateView, View
 from .models import Inicio, QuienesSomo, Contacto, Proyecto, Documento, Paz, Comunidade, Fortalecimiento, Modernizacion
+from django.core.mail import send_mail, BadHeaderError
+from .forms import ContactForm
+from django.contrib import messages
+from django.conf import settings
 
 
 class HomeView(TemplateView):
@@ -63,6 +67,24 @@ class CenterView(TemplateView):
 		context['documentos'] =  Documento.objects.all()
 		return context
 
-class ContactView(TemplateView):
-	template_name = 'contact.html'
+
+def email(request):
+    if request.method == 'GET':
+        form = ContactForm()
+    else:
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data['subject']
+            print subject
+            from_email = form.cleaned_data['from_email']
+            print from_email
+            message = form.cleaned_data['message']
+            print message
+            try:
+            	print "entro"
+                send_mail(subject, message, from_email,['abachadi@gmail.com'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            
+    return render(request, "contact.html", {'form': form})
 

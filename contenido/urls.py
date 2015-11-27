@@ -11,5 +11,5 @@ urlpatterns = patterns('',
     url(r'^proyectos/$', views.ProjectView.as_view(), name="project"),
     url(r'^galerias/$', views.GalleryView.as_view(), name="gallery"),
     url(r'^centro-documentacion/$', views.CenterView.as_view(), name="center"),
-    url(r'^contactos/$', views.ContactView.as_view(), name="contact"),    
+    url(r'^contactenos/$',views.email,name='email'),
 )

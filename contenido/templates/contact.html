@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 
 {% load staticfiles %}
-
+{% load bootstrap_tags %}
+{% block extracss  %}
+<style>
+	#map {background-color: #000; height: 100%; width: 100%;}
+</style>
+ {% endblock %}
 {% block content %}
 
 			<div class="header-banner">
@@ -12,30 +17,25 @@
 	<div class="contact-top">
 		<!-- container -->
 		<div class="container">
-			<div id="map" class="map footer-middle">
+			<div id="map">
 				
 			</div>
 			<div class="mail-grids">
-				<div class="col-md-6 mail-grid-left">
-					<h3>Address</h3>
-					<h5>Cras porttitor imperdiet volutpat nulla malesuada lectus erosut convallis felis consectetur ut</h5>
-					<h4>Headquarters</h4>
-					<p>123 T. Globel Place.
-						<span>CG 09-123</span>
-						Italy, Ba. 4567
-					</p>
-					<h4>Get In Touch</h4>
-					<p>Telephone: +1 234 567 9871
-						<span>FAX: +1 234 567 9871</span>
-						E-mail: <a href="mailto:info@example.com">mail@example.com</a>
+				<div class="col-md-6 ">
+					<h2>Fundación Raices para el Desarrolo</h2>
+					
+					
+					<br>
+					<p>Telephone: 4 20 12 07
+					<br>
+						E-mail: <a href="raicesparaeldesarrollo@gmail.com">raicesparaeldesarrollo@gmail.com</a>
 					</p>
 				</div>
 				<div class="col-md-6 contact-form">
-					<form>
-						<input type="text" placeholder="Name" required="">
-						<input type="text" placeholder="Email" required="">
-						<input type="text" placeholder="Subject" required="">
-						<textarea placeholder="Message" required=""></textarea>
+					<form method="post">
+					
+						{% csrf_token %}
+    					{{ form|as_bootstrap }}
 						<input type="submit" value="SEND">
 					</form>
 				</div>
@@ -51,26 +51,22 @@
 {% endblock %}
 <!----> 
 {% block extrajs %}
- <script src= "{% static "js/gmaps.js" %}"></script>
+ 
 <script>
-	var img = "images/logo.png";
-	url = GMaps.staticMapURL({
-	  size: [500, 300],
-	  lat:11.240501,
-	  lng: -74.186634,
-	  icon: img,
-	  markers: [
-	    {lat: 11.224306, lng:  -74.186634},
-	    {lat: -12.045333, lng: -77.034,
-	      size: 'small'},
-	    {lat: -12.045633, lng: -77.022,
-	      color: 'blue'}
-	  ]
-	});
-
-	$('<img/>').attr('src', url)
-	  .appendTo('#map');
+	
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 8
+  });
+  google.maps.event.trigger(map, "resize");
+}
 </script>
+
+<script async defer
+      src="https://maps.googleapis.com/maps/api/js?&size=324x200&key=AIzaSyDI5G6-6ztcmc2iPdZGDK1qNwL710T3BJA&callback=initMap">
+ </script>
 
 {% endblock %}
 

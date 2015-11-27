@@ -2309,3 +2309,108 @@ span.menu {
 	    padding: 8px 15px !important;
 	}
 }
+/*menu social*/
+
+#navigationMenu li{
+    list-style:none;
+    padding:1px;
+}
+
+#navigationMenu span{
+    width:0;
+    left:48px;
+    position:absolute;
+    font-family:'Myriad Pro',Arial, Helvetica, sans-serif;
+    font-size:18px;
+    font-weight:bold;
+    letter-spacing:0.6px;
+    line-height:48px;
+    color: #30437E;
+    -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -o-transition: 0.25s;
+  -ms-transition: 0.25s;
+  transition: 0.25s;
+}
+
+#navigationMenu a{
+    height:48px;
+    width:48px;
+    display:block;
+    position:relative;
+}
+
+#navigationMenu a:hover span{ 
+  width:120px; 
+  padding:0 20px;
+  border-radius: 0 3px 3px 0;
+}
+
+#navigationMenu a:hover{
+    border-radius: 3px 0 0 3px;
+}
+
+#navigationMenu .twitter {
+  background:url('../images/twitter.png') no-repeat;
+}
+
+#navigationMenu .twitter span{
+    background-color:#9FCCE0;;
+}
+
+#navigationMenu .facebook { 
+  background:url('../images/facebook.png') no-repeat;
+}
+
+#navigationMenu .facebook span{
+    background-color:#8EAAFF;
+}
+
+#navigationMenu .tumblr { 
+  background:url('../images/tumblr.png') no-repeat;
+}
+
+#navigationMenu .tumblr span{
+    background-color:#6A879E;
+}
+
+#navigationMenu .linkedin { 
+  background:url('../images/linkedin.png') no-repeat;
+}
+
+#navigationMenu .linkedin span{
+    background-color:#A8E4FF;
+}
+
+#navigationMenu .youtube { 
+  background:url('../images/you_tube.png') no-repeat;
+}
+
+#navigationMenu .youtube span{
+    background-color:#E5728B;
+}
+
+#navigationMenu .rss { 
+  background:url('../images/rss.png') no-repeat;
+}
+
+#navigationMenu .rss span{
+    background-color:#FFDD93;
+}
+
+#nebaris{
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 120px;
+    font-family: helvetica;
+}
+
+#nebaris a{
+    color:rgb(178, 255, 178);
+}
+
+#nebaris a:hover{
+    color:white;
+}
