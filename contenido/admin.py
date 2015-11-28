@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Inicio,QuienesSomo,Contacto,Proyecto,Documento, Paz, Comunidade,Fortalecimiento,Modernizacion,Imagene
+from .models import Inicio,QuienesSomo,Proyecto,Documento, Paz, Comunidade,Fortalecimiento,Modernizacion,Imagene
 from django.contrib.auth.models import Group
 from django_summernote.admin import SummernoteModelAdmin
 from django_summernote.models import Attachment
@@ -55,6 +55,5 @@ admin.site.register(Paz, PazAdmin)
 admin.site.register(Comunidade, ComunidadesAdmin)
 admin.site.register(Fortalecimiento, FortalecimientoAdmin)
 admin.site.register(Modernizacion, FortalecimientoAdmin)
-admin.site.register(Contacto)
 admin.site.register(Proyecto,ProyectoAdmin)
 admin.site.register(Documento,DocumentoAdmin)
