@@ -1203,9 +1203,7 @@ div#myTabContent {
 }
 /*--//inner-page-gallery--*/
 /*-- inner-page-contact --*/
-.contact-top {
-    padding: 6em 0 2em;
-}
+
 .map iframe {
   width: 100%;
   min-height: 400px;
