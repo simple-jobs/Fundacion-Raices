@@ -6,38 +6,45 @@
 
 <div class="header-banner">
 					<!-- Top Navigation -->
-					<section class="bgi banner5"><h2>Proyectos</h2> </section>
+					<section class="bgi banner5"><h2>Lista de Proyectos</h2> </section>
 					   
 <!--about-starts--> 
 	<div class="about">
 		
-		 <div>
-		     <!-- <h1 style="font-size: 60px;margin-bottom: 10px;">Documentos</h1> -->
-		     <div class="bs-example">
+		<!--  <div>
+		     <h1 style="font-size: 60px;margin-bottom: 10px;">Documentos</h1> -->
+		     <!-- <div class="bs-example">
 				 <table class="table">
 				  <tbody>
 				  {% for proyecto in proyectos %}
 					<tr>
-					  <td><h1 id="h1.-bootstrap-heading"><a class="anchorjs-link" href="/proyectos/{{ proyecto.id}}">{{proyecto.nombre}}<span class="anchorjs-icon"></span></a></h1></td>
-					  <!-- <td class="type-info"><a href="{{documento.archivo.url}}">Archivo.docx</a></td> -->
-					</tr>
+					  <td><h1 id="bootstrap-heading"><a class="anchorjs-link" href="/proyectos/{{ proyecto.id}}">Nombre del proyecto : {{proyecto.nombre}}<span class="anchorjs-icon"></span></a></h1></td>
+					   <td class="type-info"><a href="{{documento.archivo.url}}">Archivo.docx</a></td> -->
+					<!-- </tr>
 					{% endfor %}
 					
 					
 				  </tbody>
 				 </table>
-			 </div>
+			 </div> 
+	      </div> --> 
+	      <div class="container">
+	      	<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8" align="center">
+				 <ul class="list-group">
+	      {% for proyecto in proyectos %}
+		  <li class="list-group-item"><a href="/proyectos/{{ proyecto.id}}"> <h1>{{proyecto.nombre}}</h2></a></li>
+		  {% endfor %}
+		  
+		</ul>
+			</div>
+			<div class="col-sm-2"></div>
+	     
+	      	</div>
+	      </div></div>
 	      </div>
 
-		
-
-		
-			
-			
-		
-	</div>
-
-</div>
 {% endblock %}
 
 

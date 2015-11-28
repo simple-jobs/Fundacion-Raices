@@ -6,7 +6,7 @@
 
 <div class="header-banner">
 					<!-- Top Navigation -->
-					<section class="bgi banner5"><h2>Proyecto</h2> </section>
+					<section class="bgi banner5"><h2>{{object.nombre}}</h2> </section>
 					   
 <!--about-starts--> 
 	<div class="about">
@@ -14,6 +14,7 @@
 		 <div class="container">
 		 	<div class="row">
 		 		
+		 		{% autoescape off %}{{object.descripcion}}{% endautoescape %}
 		 	</div>
 		 </div>
 

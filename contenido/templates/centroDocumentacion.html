@@ -10,7 +10,7 @@
 					   
 <!--about-starts--> 
 	<div class="about">
-		 <div>
+		<!--  <div>
 		     <h1 style="font-size: 60px;margin-bottom: 10px;">Documentos</h1>
 		     <div class="bs-example">
 				 <table class="table">
@@ -26,16 +26,43 @@
 				  </tbody>
 				 </table>
 			 </div>
+	      </div> -->
+	      <div class="container">
+	      	<div class="row">
+	      		<div class="col-md-2"></div>
+	      		<div class="col-md-8">
+	      			<table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Nombre del documento</th>
+                  <th>Archivo</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+              {% for documento in documentos %}
+                <tr>
+                  <td>{{documento.pk}}</td>
+                  <td>{{documento.nombre}}</td>
+                  <td> <a href="{{documento.archivo.url}}">Descargar</a>  </td>
+                  
+                </tr>
+                {% endfor %}
+                
+              </tbody>
+            </table>
+	      		</div>
+	      		<div class="col-md-2"></div>
+	      	</div>
 	      </div>
 
 		
 			
 			
 		
-	</div>
-
-		</div>
 </div>
+	</div>
 
 			<!---->
 {% endblock %}

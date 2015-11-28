@@ -23,7 +23,8 @@ class ModernizacionAdmin(admin.ModelAdmin):
 	list_display = ('descripcion',)
 
 class ProyectoAdmin(SummernoteModelAdmin):
-	list_display=('descripcion',)
+	search_fields = ('nombre',)
+	list_display=('nombre',)
 	
 
 class DocumentoAdmin(admin.ModelAdmin):

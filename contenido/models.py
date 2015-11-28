@@ -30,7 +30,7 @@ class Contacto(models.Model):
 
 class Proyecto(models.Model):
 	nombre = models.CharField(max_length=255,verbose_name="Nombre del proyecto",)
-	descripcion = models.TextField(max_length=25000,verbose_name="Descripcion del proyecto",)
+	descripcion = models.TextField(max_length=40000000,verbose_name="Descripcion del proyecto",)
 
 	def __unicode__(self):
 		return self.nombre

@@ -57,10 +57,9 @@ class ProjectView(TemplateView):
 		context['proyectos'] =  Proyecto.objects.all()
 		return context
 
-
-def DetailProject(request, id):
-	detalleProject = Proyecto.objects.filter(pk=id)
-	return render(request, "detailProject.html", {'detalleProject': detalleProject})
+class ProyectDetailView(DetailView):
+	template_name = 'detailProject.html'
+	model = Proyecto
 
 
 class GalleryView(TemplateView):
