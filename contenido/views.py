@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, TemplateView, View
-from .models import Inicio, QuienesSomo, Contacto, Proyecto, Documento, Paz, Comunidade, Fortalecimiento, Modernizacion,Imagene
+from .models import Inicio, QuienesSomo, Proyecto, Documento, Paz, Comunidade, Fortalecimiento, Modernizacion,Imagene
 from django.core.mail import send_mail, BadHeaderError
 from .forms import ContactForm
 from django.contrib import messages
