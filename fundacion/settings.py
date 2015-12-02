@@ -24,7 +24,10 @@ SECRET_KEY = 'q--h=s6l%+_nfo-5+h)a^x8#o2kz3#9dn^6x$r^n94mqk#dngv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+        'raicesparaledesarrollo.org',
+        'www.raicesparaledesarrollo.org',
+]
 
 
 # Application definition
@@ -80,8 +83,12 @@ WSGI_APPLICATION = 'fundacion.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'fundacion',
+        'USER': 'raices2015',
+        'PASSWORD': 'raices123',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -120,11 +127,11 @@ else:
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (   
-    
-    os.path.join(BASE_DIR, 'contenido/static'),
-   
-
+        '/home/raices2015/webapps/media_raices/',
+        '/home/raices2015/webapps/static_raices/',
+    # os.path.join(BASE_DIR, 'contenido/static'),
 )
+
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
